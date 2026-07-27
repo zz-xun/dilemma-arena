@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#101115" />
+    <meta name="description" content="纠结擂台：让两个选项打一架，再看看你服不服。" />
+    <title>纠结擂台｜变量序列01</title>
+    <link rel="stylesheet" href="styles.css?v=20260727-4" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="view input-view is-active" id="inputView" data-view="input">
+        <div class="hero">
+          <p class="game-en">DILEMMA ARENA</p>
+          <h1>纠结擂台</h1>
+          <p class="hero-subtitle">别想了，让它们打一架。</p>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="mascot mascot-a hero-mascot">
+              <i class="mascot-ear left"></i><i class="mascot-ear right"></i>
+              <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
+              <b>A</b><i class="mascot-arm"></i>
+            </div>
+            <div class="versus-burst">VS</div>
+            <div class="mascot mascot-b hero-mascot">
+              <i class="mascot-antenna"><em></em></i>
+              <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
+              <b>B</b><i class="mascot-arm"></i>
+            </div>
+          </div>
+        </div>
+
+        <form class="decision-form" id="decisionForm">
+          <div class="form-heading">
+            <span>?</span>
+            <div><h2>今天谁上擂台？</h2></div>
+          </div>
+
+          <label class="field question-field">
+            <span>当前纠结的问题</span>
+            <textarea id="questionInput" name="question" rows="2" maxlength="80" required>今晚应该早睡，还是再刷十分钟手机？</textarea>
+          </label>
+
+          <div class="contender-input contender-a">
+            <div class="contender-label"><b>A</b><span>一号选手</span></div>
+            <label class="field">
+              <span>选项 A</span>
+              <input name="optionA" maxlength="30" value="今晚早睡" required />
+            </label>
+            <label class="field">
+              <span>为什么想选它？</span>
+              <textarea name="reasonA" rows="3" maxlength="120" required>明天八点有课，最近也总是睡不够。</textarea>
+            </label>
+          </div>
+
+          <div class="versus-divider"><span></span><b>VS</b><span></span></div>
+
+          <div class="contender-input contender-b">
+            <div class="contender-label"><b>B</b><span>二号选手</span></div>
+            <label class="field">
+              <span>选项 B</span>
+              <input name="optionB" maxlength="30" value="再刷十分钟手机" required />
+            </label>
+            <label class="field">
+              <span>为什么想选它？</span>
+              <textarea name="reasonB" rows="3" maxlength="120" required>这个视频马上看完了，而且现在还不太困。</textarea>
+            </label>
+          </div>
+
+          <button class="primary-button launch-button" type="submit">
+            <span>生成选手，马上开打</span><i>→</i>
+          </button>
+          <p class="safety-note">仅限低风险日常选择，不替你决定人生大事。</p>
+        </form>
+      </section>
+
+      <section class="view scan-view" id="scanView" data-view="scan" aria-live="polite">
+        <div class="scan-stage">
+          <div class="scanner">
+            <div class="scan-orb"><span id="scanLetter">A</span><i></i></div>
+            <div class="scan-ring ring-one"></div>
+            <div class="scan-ring ring-two"></div>
+            <div class="scan-beam"></div>
+          </div>
+          <h2 id="scanTitle">正在读取你的言外之意</h2>
+          <p id="scanText">提取时间压力、执行成本与隐藏欲望…</p>
+          <div class="scan-progress"><span id="scanProgress"></span></div>
+          <div class="scan-tags" id="scanTags">
+            <span>时间压力</span><span>长期价值</span><span>执行成本</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="view roster-view" id="rosterView" data-view="roster">
+        <div class="section-intro">
+          <h2>选手生成完毕</h2>
+        </div>
+        <div class="roster" id="roster"></div>
+        <button class="primary-button" id="startBattleButton" type="button">
+          <span>进入纠结擂台</span><i>⚡</i>
+        </button>
+      </section>
+
+      <section class="view battle-view" id="battleView" data-view="battle">
+        <div class="battle-head">
+          <div>
+            <h2 id="battleQuestion">今晚应该早睡，还是再刷十分钟手机？</h2>
+          </div>
+          <div class="round-counter"><span>回合</span><b id="roundNumber">1 / 6</b></div>
+        </div>
+
+        <div class="arena" id="arena">
+          <div class="arena-grid" aria-hidden="true"></div>
+          <div class="battle-fighter fighter-a" id="battleFighterA">
+            <div class="health-meta"><span id="battleNameA">早睡执行官</span><b id="hpTextA">100</b></div>
+            <div class="health-track"><span id="hpBarA"></span></div>
+            <div class="mascot mascot-a battle-avatar">
+              <i class="mascot-ear left"></i><i class="mascot-ear right"></i>
+              <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
+              <b>A</b><i class="mascot-arm"></i>
+            </div>
+          </div>
+          <div class="battle-fighter fighter-b" id="battleFighterB">
+            <div class="health-meta"><span id="battleNameB">十分钟诱惑体</span><b id="hpTextB">100</b></div>
+            <div class="health-track"><span id="hpBarB"></span></div>
+            <div class="mascot mascot-b battle-avatar">
+              <i class="mascot-antenna"><em></em></i>
+              <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
+              <b>B</b><i class="mascot-arm"></i>
+            </div>
+          </div>
+          <div class="arena-vs">VS</div>
+          <div class="impact-flash" id="impactFlash"></div>
+          <div class="damage-number" id="damageNumber">-18</div>
+          <div class="skill-callout" id="skillCallout">
+            <small id="skillOwner">A 发动技能</small>
+            <strong id="skillName">早八警报</strong>
+          </div>
+        </div>
+
+        <div class="commentary-box">
+          <span class="live-dot"></span>
+          <p id="battleCommentary">双方正在互相打量，空气里都是没做完的决定。</p>
+        </div>
+
+        <div class="battle-log-wrap">
+          <div class="battle-log-head"><span>实时战报</span><button id="skipBattleButton" type="button">跳过动画</button></div>
+          <ol class="battle-log" id="battleLog"></ol>
+        </div>
+      </section>
+
+      <section class="view verdict-view" id="verdictView" data-view="verdict">
+        <div class="verdict-confetti" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="winner-stage">
+          <div class="winner-ring ring-outer"></div>
+          <div class="winner-ring ring-inner"></div>
+          <div class="winner-emblem" id="winnerEmblem"><span id="winnerLetter">B</span><i>胜</i></div>
+          <span class="winner-ray ray-one"></span><span class="winner-ray ray-two"></span><span class="winner-ray ray-three"></span>
+        </div>
+        <p class="verdict-label">本次擂台胜者</p>
+        <h2 id="winnerName">十分钟诱惑体</h2>
+        <p class="winner-option" id="winnerOption">“再刷十分钟手机”</p>
+        <div class="verdict-stamp">裁定已生成</div>
+        <div class="verdict-stats">
+          <div><span>剩余生命</span><b id="winnerHp">42</b></div>
+          <i></i>
+          <div><span>鏖战回合</span><b id="winnerRounds">6</b></div>
+          <i></i>
+          <div><span>胜出技能</span><b id="winningSkill">时间蒸发</b></div>
+        </div>
+        <div class="verdict-actions">
+          <button class="accept-button" id="acceptButton" type="button"><span>接受判决</span></button>
+          <button class="reject-button" id="rejectButton" type="button"><span>我不服</span></button>
+        </div>
+        <p class="reaction-timer">判决已公布 <b id="reactionTimer">0.0s</b></p>
+      </section>
+
+      <section class="view result-view" id="resultView" data-view="result">
+        <div class="result-heading">
+          <h2 id="resultHeading">你的答案浮出水面了</h2>
+          <p id="resultLead">有时候，反对比选择更诚实。</p>
+        </div>
+
+        <div class="result-duel" aria-label="本局 A B 选手">
+          <div class="result-fighter result-fighter-a">
+            <div class="mascot mascot-a result-mascot">
+              <i class="mascot-ear left"></i><i class="mascot-ear right"></i>
+              <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
+              <b>A</b><i class="mascot-arm"></i>
+            </div>
+            <strong>A <span id="resultNameA">今晚早睡</span></strong>
+          </div>
+          <div class="result-vs">VS</div>
+          <div class="result-fighter result-fighter-b">
+            <div class="mascot mascot-b result-mascot">
+              <i class="mascot-antenna"><em></em></i>
+              <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
+              <b>B</b><i class="mascot-arm"></i>
+            </div>
+            <strong>B <span id="resultNameB">再刷十分钟手机</span></strong>
+          </div>
+        </div>
+
+        <article class="share-card" id="shareCard">
+          <p class="report-label">今日纠结</p>
+          <h3 id="reportQuestion">早睡 vs 再刷十分钟</h3>
+          <div class="report-versus">
+            <div class="report-side side-a"><span>A</span><b id="reportOptionA">今晚早睡</b></div>
+            <i>VS</i>
+            <div class="report-side side-b"><span>B</span><b id="reportOptionB">再刷十分钟手机</b></div>
+          </div>
+          <dl class="report-details">
+            <div><dt>系统胜者</dt><dd id="systemWinner">再刷十分钟手机</dd></div>
+            <div id="overrideRow"><dt>本人改判</dt><dd id="finalWinner">今晚早睡</dd></div>
+            <div id="reactionRow"><dt>反悔用时</dt><dd id="reactionTime">0.8 秒</dd></div>
+          </dl>
+          <div class="report-conclusion">
+            <small>本次偏好分析</small>
+            <p id="resultConclusion">答案一直都在，<br />只是需要有人先选错。</p>
+          </div>
+          <footer><span>仅供娱乐，重大决定请认真考虑</span></footer>
+        </article>
+
+        <div class="result-actions">
+          <button class="primary-button" id="saveCardButton" type="button"><span>保存战报图片</span><i>↓</i></button>
+          <button class="secondary-button" id="playAgainButton" type="button">再打一场</button>
+        </div>
+      </section>
+
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </main>
+
+    <script defer src="generator.js?v=20260727-4"></script>
+    <script defer src="battle-engine.js?v=20260727-4"></script>
+    <script defer src="app.js?v=20260727-4"></script>
+  </body>
+</html>
