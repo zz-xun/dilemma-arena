@@ -1,20 +1,20 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#101115" />
-    <meta name="description" content="纠结擂台：让两个选项打一架，再看看你服不服。" />
-    <title>纠结擂台｜变量序列01</title>
-    <link rel="stylesheet" href="styles.css?v=20260727-5" />
+    <meta name="description" content="绾犵粨鎿傚彴锛氳涓や釜閫夐」鎵撲竴鏋讹紝鍐嶇湅鐪嬩綘鏈嶄笉鏈嶃€? />
+    <title>绾犵粨鎿傚彴锝滃彉閲忓簭鍒?1</title>
+    <link rel="stylesheet" href="styles.css?v=20260727-6" />
   </head>
   <body>
     <main class="app-shell">
       <section class="view input-view is-active" id="inputView" data-view="input">
         <div class="hero">
           <p class="game-en">DILEMMA ARENA</p>
-          <h1>纠结擂台</h1>
-          <p class="hero-subtitle">别想了，让它们打一架。</p>
+          <h1>绾犵粨鎿傚彴</h1>
+          <p class="hero-subtitle">鍒兂浜嗭紝璁╁畠浠墦涓€鏋躲€?/p>
           <div class="hero-visual" aria-hidden="true">
             <div class="mascot mascot-a hero-mascot">
               <i class="mascot-ear left"></i><i class="mascot-ear right"></i>
@@ -33,44 +33,44 @@
         <form class="decision-form" id="decisionForm">
           <div class="form-heading">
             <span>?</span>
-            <div><h2>今天谁上擂台？</h2></div>
+            <div><h2>浠婂ぉ璋佷笂鎿傚彴锛?/h2></div>
           </div>
 
           <label class="field question-field">
-            <span>当前纠结的问题</span>
-            <textarea id="questionInput" name="question" rows="2" maxlength="80" required>今晚应该早睡，还是再刷十分钟手机？</textarea>
+            <span>褰撳墠绾犵粨鐨勯棶棰?/span>
+            <textarea id="questionInput" name="question" rows="2" maxlength="80" required>浠婃櫄搴旇鏃╃潯锛岃繕鏄啀鍒峰崄鍒嗛挓鎵嬫満锛?/textarea>
           </label>
 
           <div class="contender-input contender-a">
-            <div class="contender-label"><b>A</b><span>一号选手</span></div>
+            <div class="contender-label"><b>A</b><span>涓€鍙烽€夋墜</span></div>
             <label class="field">
-              <span>选项 A</span>
-              <input name="optionA" maxlength="30" value="今晚早睡" required />
+              <span>閫夐」 A</span>
+              <input name="optionA" maxlength="30" value="浠婃櫄鏃╃潯" required />
             </label>
             <label class="field">
-              <span>为什么想选它？</span>
-              <textarea name="reasonA" rows="3" maxlength="120" required>明天八点有课，最近也总是睡不够。</textarea>
+              <span>涓轰粈涔堟兂閫夊畠锛?/span>
+              <textarea name="reasonA" rows="3" maxlength="120" required>鏄庡ぉ鍏偣鏈夎锛屾渶杩戜篃鎬绘槸鐫′笉澶熴€?/textarea>
             </label>
           </div>
 
           <div class="versus-divider"><span></span><b>VS</b><span></span></div>
 
           <div class="contender-input contender-b">
-            <div class="contender-label"><b>B</b><span>二号选手</span></div>
+            <div class="contender-label"><b>B</b><span>浜屽彿閫夋墜</span></div>
             <label class="field">
-              <span>选项 B</span>
-              <input name="optionB" maxlength="30" value="再刷十分钟手机" required />
+              <span>閫夐」 B</span>
+              <input name="optionB" maxlength="30" value="鍐嶅埛鍗佸垎閽熸墜鏈? required />
             </label>
             <label class="field">
-              <span>为什么想选它？</span>
-              <textarea name="reasonB" rows="3" maxlength="120" required>这个视频马上看完了，而且现在还不太困。</textarea>
+              <span>涓轰粈涔堟兂閫夊畠锛?/span>
+              <textarea name="reasonB" rows="3" maxlength="120" required>杩欎釜瑙嗛椹笂鐪嬪畬浜嗭紝鑰屼笖鐜板湪杩樹笉澶洶銆?/textarea>
             </label>
           </div>
 
           <button class="primary-button launch-button" type="submit">
-            <span>生成选手，马上开打</span><i>→</i>
+            <span>鐢熸垚閫夋墜锛岄┈涓婂紑鎵?/span><i>鈫?/i>
           </button>
-          <p class="safety-note">仅限低风险日常选择，不替你决定人生大事。</p>
+          <p class="safety-note">浠呴檺浣庨闄╂棩甯搁€夋嫨锛屼笉鏇夸綘鍐冲畾浜虹敓澶т簨銆?/p>
         </form>
       </section>
 
@@ -82,37 +82,37 @@
             <div class="scan-ring ring-two"></div>
             <div class="scan-beam"></div>
           </div>
-          <h2 id="scanTitle">正在读取你的言外之意</h2>
-          <p id="scanText">提取时间压力、执行成本与隐藏欲望…</p>
+          <h2 id="scanTitle">姝ｅ湪璇诲彇浣犵殑瑷€澶栦箣鎰?/h2>
+          <p id="scanText">鎻愬彇鏃堕棿鍘嬪姏銆佹墽琛屾垚鏈笌闅愯棌娆叉湜鈥?/p>
           <div class="scan-progress"><span id="scanProgress"></span></div>
           <div class="scan-tags" id="scanTags">
-            <span>时间压力</span><span>长期价值</span><span>执行成本</span>
+            <span>鏃堕棿鍘嬪姏</span><span>闀挎湡浠峰€?/span><span>鎵ц鎴愭湰</span>
           </div>
         </div>
       </section>
 
       <section class="view roster-view" id="rosterView" data-view="roster">
         <div class="section-intro">
-          <h2>选手生成完毕</h2>
+          <h2>閫夋墜鐢熸垚瀹屾瘯</h2>
         </div>
         <div class="roster" id="roster"></div>
         <button class="primary-button" id="startBattleButton" type="button">
-          <span>进入纠结擂台</span><i>⚡</i>
+          <span>杩涘叆绾犵粨鎿傚彴</span><i>鈿?/i>
         </button>
       </section>
 
       <section class="view battle-view" id="battleView" data-view="battle">
         <div class="battle-head">
           <div>
-            <h2 id="battleQuestion">今晚应该早睡，还是再刷十分钟手机？</h2>
+            <h2 id="battleQuestion">浠婃櫄搴旇鏃╃潯锛岃繕鏄啀鍒峰崄鍒嗛挓鎵嬫満锛?/h2>
           </div>
-          <div class="round-counter"><span>回合</span><b id="roundNumber">1 / 6</b></div>
+          <div class="round-counter"><span>鍥炲悎</span><b id="roundNumber">1 / 6</b></div>
         </div>
 
         <div class="arena" id="arena">
           <div class="arena-grid" aria-hidden="true"></div>
           <div class="battle-fighter fighter-a" id="battleFighterA">
-            <div class="health-meta"><span id="battleNameA">早睡执行官</span><b id="hpTextA">100</b></div>
+            <div class="health-meta"><span id="battleNameA">鏃╃潯鎵ц瀹?/span><b id="hpTextA">100</b></div>
             <div class="health-track"><span id="hpBarA"></span></div>
             <div class="mascot mascot-a battle-avatar">
               <i class="mascot-ear left"></i><i class="mascot-ear right"></i>
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="battle-fighter fighter-b" id="battleFighterB">
-            <div class="health-meta"><span id="battleNameB">十分钟诱惑体</span><b id="hpTextB">100</b></div>
+            <div class="health-meta"><span id="battleNameB">鍗佸垎閽熻鎯戜綋</span><b id="hpTextB">100</b></div>
             <div class="health-track"><span id="hpBarB"></span></div>
             <div class="mascot mascot-b battle-avatar">
               <i class="mascot-antenna"><em></em></i>
@@ -133,18 +133,18 @@
           <div class="impact-flash" id="impactFlash"></div>
           <div class="damage-number" id="damageNumber">-18</div>
           <div class="skill-callout" id="skillCallout">
-            <small id="skillOwner">A 发动技能</small>
-            <strong id="skillName">早八警报</strong>
+            <small id="skillOwner">A 鍙戝姩鎶€鑳?/small>
+            <strong id="skillName">鏃╁叓璀︽姤</strong>
           </div>
         </div>
 
         <div class="commentary-box">
           <span class="live-dot"></span>
-          <p id="battleCommentary">双方正在互相打量，空气里都是没做完的决定。</p>
+          <p id="battleCommentary">鍙屾柟姝ｅ湪浜掔浉鎵撻噺锛岀┖姘旈噷閮芥槸娌″仛瀹岀殑鍐冲畾銆?/p>
         </div>
 
         <div class="battle-log-wrap">
-          <div class="battle-log-head"><span>实时战报</span><button id="skipBattleButton" type="button">跳过动画</button></div>
+          <div class="battle-log-head"><span>瀹炴椂鎴樻姤</span><button id="skipBattleButton" type="button">璺宠繃鍔ㄧ敾</button></div>
           <ol class="battle-log" id="battleLog"></ol>
         </div>
       </section>
@@ -154,41 +154,41 @@
         <div class="winner-stage">
           <div class="winner-ring ring-outer"></div>
           <div class="winner-ring ring-inner"></div>
-          <div class="winner-emblem" id="winnerEmblem"><span id="winnerLetter">B</span><i>胜</i></div>
+          <div class="winner-emblem" id="winnerEmblem"><span id="winnerLetter">B</span><i>鑳?/i></div>
           <span class="winner-ray ray-one"></span><span class="winner-ray ray-two"></span><span class="winner-ray ray-three"></span>
         </div>
-        <p class="verdict-label">本次擂台胜者</p>
-        <h2 id="winnerName">十分钟诱惑体</h2>
-        <p class="winner-option" id="winnerOption">“再刷十分钟手机”</p>
-        <div class="verdict-stamp">裁定已生成</div>
+        <p class="verdict-label">鏈鎿傚彴鑳滆€?/p>
+        <h2 id="winnerName">鍗佸垎閽熻鎯戜綋</h2>
+        <p class="winner-option" id="winnerOption">鈥滃啀鍒峰崄鍒嗛挓鎵嬫満鈥?/p>
+        <div class="verdict-stamp">瑁佸畾宸茬敓鎴?/div>
         <div class="verdict-stats">
-          <div><span>剩余生命</span><b id="winnerHp">42</b></div>
+          <div><span>鍓╀綑鐢熷懡</span><b id="winnerHp">42</b></div>
           <i></i>
-          <div><span>鏖战回合</span><b id="winnerRounds">6</b></div>
+          <div><span>閺栨垬鍥炲悎</span><b id="winnerRounds">6</b></div>
           <i></i>
-          <div><span>胜出技能</span><b id="winningSkill">时间蒸发</b></div>
+          <div><span>鑳滃嚭鎶€鑳?/span><b id="winningSkill">鏃堕棿钂稿彂</b></div>
         </div>
         <div class="verdict-actions">
-          <button class="accept-button" id="acceptButton" type="button"><span>接受判决</span></button>
-          <button class="reject-button" id="rejectButton" type="button"><span>我不服</span></button>
+          <button class="accept-button" id="acceptButton" type="button"><span>鎺ュ彈鍒ゅ喅</span></button>
+          <button class="reject-button" id="rejectButton" type="button"><span>鎴戜笉鏈?/span></button>
         </div>
-        <p class="reaction-timer">判决已公布 <b id="reactionTimer">0.0s</b></p>
+        <p class="reaction-timer">鍒ゅ喅宸插叕甯?<b id="reactionTimer">0.0s</b></p>
       </section>
 
       <section class="view result-view" id="resultView" data-view="result">
         <div class="result-heading">
-          <h2 id="resultHeading">你的答案浮出水面了</h2>
-          <p id="resultLead">有时候，反对比选择更诚实。</p>
+          <h2 id="resultHeading">浣犵殑绛旀娴嚭姘撮潰浜?/h2>
+          <p id="resultLead">鏈夋椂鍊欙紝鍙嶅姣旈€夋嫨鏇磋瘹瀹炪€?/p>
         </div>
 
-        <div class="result-duel" aria-label="本局 A B 选手">
+        <div class="result-duel" aria-label="鏈眬 A B 閫夋墜">
           <div class="result-fighter result-fighter-a">
             <div class="mascot mascot-a result-mascot">
               <i class="mascot-ear left"></i><i class="mascot-ear right"></i>
               <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
               <b>A</b><i class="mascot-arm"></i>
             </div>
-            <strong>A <span id="resultNameA">今晚早睡</span></strong>
+            <strong>A <span id="resultNameA">浠婃櫄鏃╃潯</span></strong>
           </div>
           <div class="result-vs">VS</div>
           <div class="result-fighter result-fighter-b">
@@ -197,41 +197,43 @@
               <span class="mascot-face"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span>
               <b>B</b><i class="mascot-arm"></i>
             </div>
-            <strong>B <span id="resultNameB">再刷十分钟手机</span></strong>
+            <strong>B <span id="resultNameB">鍐嶅埛鍗佸垎閽熸墜鏈?/span></strong>
           </div>
         </div>
 
         <article class="share-card" id="shareCard">
-          <p class="report-label">今日纠结</p>
-          <h3 id="reportQuestion">早睡 vs 再刷十分钟</h3>
+          <p class="report-label">浠婃棩绾犵粨</p>
+          <h3 id="reportQuestion">鏃╃潯 vs 鍐嶅埛鍗佸垎閽?/h3>
           <div class="report-versus">
-            <div class="report-side side-a"><span>A</span><b id="reportOptionA">今晚早睡</b></div>
+            <div class="report-side side-a"><span>A</span><b id="reportOptionA">浠婃櫄鏃╃潯</b></div>
             <i>VS</i>
-            <div class="report-side side-b"><span>B</span><b id="reportOptionB">再刷十分钟手机</b></div>
+            <div class="report-side side-b"><span>B</span><b id="reportOptionB">鍐嶅埛鍗佸垎閽熸墜鏈?/b></div>
           </div>
           <dl class="report-details">
-            <div><dt>系统胜者</dt><dd id="systemWinner">再刷十分钟手机</dd></div>
-            <div id="overrideRow"><dt>本人改判</dt><dd id="finalWinner">今晚早睡</dd></div>
-            <div id="reactionRow"><dt>反悔用时</dt><dd id="reactionTime">0.8 秒</dd></div>
+            <div><dt>绯荤粺鑳滆€?/dt><dd id="systemWinner">鍐嶅埛鍗佸垎閽熸墜鏈?/dd></div>
+            <div id="overrideRow"><dt>鏈汉鏀瑰垽</dt><dd id="finalWinner">浠婃櫄鏃╃潯</dd></div>
+            <div id="reactionRow"><dt>鍙嶆倲鐢ㄦ椂</dt><dd id="reactionTime">0.8 绉?/dd></div>
           </dl>
           <div class="report-conclusion">
-            <small>本次偏好分析</small>
-            <p id="resultConclusion">答案一直都在，<br />只是需要有人先选错。</p>
+            <small>鏈鍋忓ソ鍒嗘瀽</small>
+            <p id="resultConclusion">绛旀涓€鐩撮兘鍦紝<br />鍙槸闇€瑕佹湁浜哄厛閫夐敊銆?/p>
           </div>
-          <footer><span>仅供娱乐，重大决定请认真考虑</span></footer>
+          <footer><span>浠呬緵濞变箰锛岄噸澶у喅瀹氳璁ょ湡鑰冭檻</span></footer>
         </article>
 
         <div class="result-actions">
-          <button class="primary-button" id="saveCardButton" type="button"><span>保存战报图片</span><i>↓</i></button>
-          <button class="secondary-button" id="playAgainButton" type="button">再打一场</button>
+          <button class="primary-button" id="saveCardButton" type="button"><span>淇濆瓨鎴樻姤鍥剧墖</span><i>鈫?/i></button>
+          <button class="secondary-button" id="playAgainButton" type="button">鍐嶆墦涓€鍦?/button>
         </div>
       </section>
 
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </main>
 
-    <script defer src="generator.js?v=20260727-4"></script>
-    <script defer src="battle-engine.js?v=20260727-4"></script>
-    <script defer src="app.js?v=20260727-4"></script>
+    <script defer src="generator.js?v=20260727-6"></script>
+    <script defer src="battle-engine.js?v=20260727-6"></script>
+    <script defer src="app.js?v=20260727-6"></script>
   </body>
 </html>
+
+
