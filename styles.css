@@ -641,3 +641,44 @@ h1, h2, h3, p { margin-top: 0; }
 /* Add one completed row per round; reserve six equal tracks so the list stays stable. */
 .battle-log { align-content:start; }
 .battle-log li { min-height:34px;animation:log-in .28s ease both; }
+
+/* Keep the complete six-round report inside one portrait viewport. */
+.battle-view.is-active {
+  display:flex;
+  height:100dvh;
+  min-height:0;
+  flex-direction:column;
+  overflow:hidden;
+}
+.battle-view .battle-head { flex:0 0 auto; }
+.battle-view .arena {
+  height:auto;
+  min-height:0;
+  flex:0 0 clamp(248px,38dvh,310px);
+}
+.battle-view .commentary-box {
+  max-height:58px;
+  flex:0 0 auto;
+  overflow:hidden;
+}
+.battle-view .battle-log-wrap {
+  display:grid;
+  height:auto;
+  min-height:0;
+  flex:1 1 auto;
+  grid-template-rows:auto minmax(0,1fr);
+  gap:8px;
+  overflow:hidden;
+}
+.battle-view .battle-log {
+  height:100%;
+  min-height:0;
+  margin:0;
+  grid-template-rows:repeat(6,minmax(0,1fr));
+  align-content:stretch;
+}
+.battle-view .battle-log li { min-height:0; }
+
+@media (min-width:431px) {
+  .battle-view.is-active { height:calc(100dvh - 40px); }
+}
