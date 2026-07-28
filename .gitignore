@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+*.timestamp-*.mjs
+.vite/
+.DS_Store
+Thumbs.db
