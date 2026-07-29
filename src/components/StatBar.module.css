@@ -1,0 +1,9 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.label { font-size: 11px; color: var(--text-secondary); width: 28px; flex-shrink: 0; }
+.track { flex: 1; height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; overflow: hidden; }
+.fill { height: 100%; border-radius: 2px; transition: width 0.4s; }
+.value { font-size: 11px; font-family: var(--font-mono); color: var(--text); width: 24px; text-align: right; flex-shrink: 0; }

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">纠结擂台 B 形象</title>
+  <desc id="desc">青色抽象圆形角色，带天线、眼睛、平静嘴型和 B 徽章。</desc>
+  <defs>
+    <linearGradient id="body" x1="15%" y1="8%" x2="90%" y2="95%">
+      <stop offset="0" stop-color="#a7f1ed"/>
+      <stop offset=".52" stop-color="#52cfe1"/>
+      <stop offset="1" stop-color="#17758b"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="160%" height="170%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feOffset dx="0" dy="8" result="offset"/>
+      <feColorMatrix in="offset" type="matrix" values="0 0 0 0 0.02 0 0 0 0 0.22 0 0 0 0 0.28 0 0 0 .28 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <ellipse cx="116" cy="218" rx="83" ry="12" fill="#000" opacity=".28"/>
+  <g transform="rotate(5 120 122)" filter="url(#shadow)">
+    <path d="M40 121c0-46 34-78 79-78 15 0 29 4 41 11l5-37h5l-2 39c21 13 31 36 31 65 0 45-32 77-79 77-47 0-80-31-80-77Z" fill="url(#body)" stroke="#fff8ed" stroke-width="4"/>
+    <path d="M44 121c0-41 30-71 75-71 15 0 29 3 40 10l5-35h3l-2 39c19 12 28 32 28 58 0 40-29 69-72 69-45 0-77-28-77-70Z" fill="url(#body)" stroke="#17191d" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M49 102c11-30 38-47 72-47 29 0 53 11 66 31-12-7-26-10-43-10-35 0-67 9-95 26Z" fill="#fff" opacity=".2"/>
+    <circle cx="91" cy="112" r="6" fill="#f8f3e9"/>
+    <circle cx="153" cy="112" r="6" fill="#f8f3e9"/>
+    <path d="M101 140h27" fill="none" stroke="#17191d" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(31 151) rotate(-7)">
+      <rect width="34" height="34" rx="9" fill="#f5f1e9" stroke="#0f1014" stroke-width="4"/>
+      <text x="17" y="24" text-anchor="middle" fill="#17191d" font-family="Arial,sans-serif" font-size="22" font-weight="900">B</text>
+    </g>
+    <path d="M46 125c-17-12-25-8-24 2 1 7 10 8 19 11" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="167" cy="18" r="8" fill="#e5f454" stroke="#0f1014" stroke-width="3"/>
+    <path d="M167 26 169 58" stroke="#a7f1ed" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">纠结擂台 A 形象</title>
+  <desc id="desc">珊瑚色抽象圆形角色，带耳朵、眼睛、微笑和 A 徽章。</desc>
+  <defs>
+    <linearGradient id="body" x1="18%" y1="8%" x2="88%" y2="95%">
+      <stop offset="0" stop-color="#ffb08e"/>
+      <stop offset=".52" stop-color="#ff765f"/>
+      <stop offset="1" stop-color="#a72e36"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="160%" height="170%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5" result="blur"/>
+      <feOffset dx="0" dy="8" result="offset"/>
+      <feColorMatrix in="offset" type="matrix" values="0 0 0 0 0.35 0 0 0 0 0.05 0 0 0 0 0.08 0 0 0 .28 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <ellipse cx="124" cy="218" rx="83" ry="12" fill="#000" opacity=".28"/>
+  <g transform="rotate(-5 120 122)" filter="url(#shadow)">
+    <path d="M54 76 45 20l38 37c11-7 25-11 38-11 15 0 29 4 41 12l38-38-10 58c9 13 13 28 13 45 0 44-29 76-82 76S38 167 38 123c0-18 5-34 16-47Z" fill="#f98670" stroke="#fff8ed" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M55 77 48 31l30 31c12-6 27-9 43-9 16 0 30 4 42 11l31-32-8 47c8 12 12 27 12 44 0 40-27 68-76 68s-75-28-75-68c0-17 4-32 13-46Z" fill="url(#body)" stroke="#17191d" stroke-opacity=".34" stroke-width="2"/>
+    <path d="M55 77 48 31l30 31c-7 4-14 9-20 15l-3 0Z" fill="#fff2d9" opacity=".9"/>
+    <path d="M162 66 194 34l-9 48c-8-7-16-12-23-16Z" fill="#fff2d9" opacity=".9"/>
+    <path d="M55 110c7-28 33-46 68-46 38 0 65 19 72 49-12-9-27-14-45-14-36 0-70 4-95 11Z" fill="#fff" opacity=".19"/>
+    <circle cx="89" cy="112" r="6" fill="#f8f3e9"/>
+    <circle cx="151" cy="112" r="6" fill="#f8f3e9"/>
+    <path d="M101 139c4 10 18 13 25 0" fill="none" stroke="#17191d" stroke-width="4" stroke-linecap="round"/>
+    <g transform="translate(177 151) rotate(7)">
+      <rect width="34" height="34" rx="9" fill="#f5f1e9" stroke="#0f1014" stroke-width="4"/>
+      <text x="17" y="24" text-anchor="middle" fill="#17191d" font-family="Arial,sans-serif" font-size="22" font-weight="900">A</text>
+    </g>
+    <path d="M185 125c17-12 25-8 24 2-1 7-10 8-19 11" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

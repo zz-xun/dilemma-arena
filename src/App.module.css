@@ -1,0 +1,12 @@
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+.container {
+  width: 100%;
+  max-width: 430px;
+  position: relative;
+}

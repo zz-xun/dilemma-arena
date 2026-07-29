@@ -1,0 +1,108 @@
+/* ---------------------------------------------------------------------------
+   纠结擂台 — Global Styles
+   气质：克制的 / 编辑感的 / 精致的 / 实验感的
+   Inspired by late-night editorial broadcast overlays, not game UI templates.
+   --------------------------------------------------------------------------- */
+
+:root {
+  --bg: #1a1c24;
+  --surface: #222530;
+  --surface-light: #2a2d3a;
+  --border: rgba(255, 255, 255, 0.06);
+  --grid: rgba(255, 255, 255, 0.025);
+
+  --side-a: #f98670;
+  --side-a-dim: #a72e36;
+  --side-b: #52cfe1;
+  --side-b-dim: #17758b;
+  --accent: #e6c954;
+  --accent-dim: #a89430;
+
+  --text: #e6e4df;
+  --text-secondary: #8a8890;
+  --text-muted: #545360;
+
+  --danger: #e0556a;
+  --success: #5cb878;
+
+  --font-sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Cascadia Code', 'Consolas', 'JetBrains Mono', monospace;
+
+  --radius: 4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grid */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 2px; }

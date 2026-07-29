@@ -1,0 +1,10 @@
+.card {
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.02);
+  border-left: 2px solid;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.name { font-size: 12px; font-weight: 600; margin-bottom: 1px; }
+.desc { font-size: 10px; color: var(--text-secondary); line-height: 1.4; margin-bottom: 3px; }
+.tags { display: flex; flex-wrap: wrap; gap: 3px; }
+.tag { font-size: 9px; font-family: var(--font-mono); padding: 1px 5px; background: rgba(255,255,255,0.04); border-radius: 2px; color: var(--text-muted); }
